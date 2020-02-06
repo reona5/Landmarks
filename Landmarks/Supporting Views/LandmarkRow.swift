@@ -1,10 +1,10 @@
-//
-//  LandmarkRow.swift
-//  Landmarks
-//
-//  Created by 嶋田怜央成 on 2020/02/04.
-//  Copyright © 2020 Apple. All rights reserved.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ A single row to be displayed in a list of landmarks.
+ */
+
 import SwiftUI
 
 struct LandmarkRow: View {
@@ -17,6 +17,12 @@ struct LandmarkRow: View {
         .frame(width: 50, height: 50)
       Text(landmark.name)
       Spacer()
+      
+      if landmark.isFavorite {
+        Image(systemName: "star.fill")
+          .imageScale(.medium)
+          .foregroundColor(.yellow)
+      }
     }
   }
 }
